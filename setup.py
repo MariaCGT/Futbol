@@ -9,6 +9,7 @@ setup(name='YourAppName',
       install_requires=[
         'bottle',
         'requests',
-        'json'
+        'json',
+        'python-requests'
         ],
      )
