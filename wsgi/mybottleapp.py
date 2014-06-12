@@ -51,7 +51,17 @@ def partidos1():
 	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','req':'matchsday','date':fecha}
 	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
 	datos = json.loads(r.text.encode("utf-8"))
-	return template('partidos',datos=datos)
+	
+	rango=int(len(datos['matches']))
+	partidos = []
+	comp = []
+
+	for i in xrange(rango):
+		comp = datos['matches'][i]['competition_name']
+		if comp == "Liga BBVA":
+			partidos.append(datos['matches'][i]['local'])
+	
+	return template('partidos',partidos=partidos)
 	
 @route('/clasificacion2')
 def clasificacion1():

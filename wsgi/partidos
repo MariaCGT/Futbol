@@ -4,6 +4,8 @@
 	</head>
 	 <body>
 		<h2>Resultados de la búsqueda</h2>
-			{{ datos }}
+			%for i in partidos:
+				<p> {{ i }}</p>
+			%end
 </body>
 </html>
