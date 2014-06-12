@@ -8,8 +8,6 @@ setup(name='YourAppName',
       url='http://www.python.org/sigs/distutils-sig/',
       install_requires=[
         'bottle',
-        'requests',
-        'json',
-        'python-requests'
+        'requests'
         ],
      )
