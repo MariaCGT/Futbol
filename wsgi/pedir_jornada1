@@ -1,0 +1,13 @@
+<html>
+	<head>
+		<title> Fut_Results </title>
+	</head>
+	<body>
+		<h2> Introduce el número de jornada a consultar </h2>
+		<form action="/jornada1" method="POST">
+			<b>Jornada:</b>	<input name="ronda" type="text" />
+			</div>
+			<input value="Buscar" type="submit"/>
+		</form>
+	</body>
+</html>

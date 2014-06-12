@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>Open-plot</title>
+	</head>
+	<body>
+		<h2>Define el area a consultar</h2>
+		<form action="/pcaja" method="POST">
+			<div id="cuadro">
+			<b>Lado_Izquierdo:</b>	<input name="lado_izq" type="text" />
+			</div>
+			<div id="cuadro1">
+			<b>Lado_Derecho:</b>  <input name="lado_dcho" type="text" />
+			</div>
+			<div id="cuadro2">
+			<b>Lado_Superior:</b>	<input name="lado_sup" type="text" />
+			</div>
+			<div id="cuadro3">
+			<b>Lado_Inferior:</b>	<input name="lado_inf" type="text" />
+			</div>
+			<input value="Buscar" type="submit"/>
+		</form>
+	</body>
+</html>

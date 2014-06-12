@@ -8,7 +8,7 @@
 		<h2>Elije que quieres consultar</h2>
 			<a href="/clasificacion1"> Clasificación </a>
 			</br>
-			<a href="/jornadas1"> Jornadas </a>
+			<a href="/pedir_jornada1"> Jornadas </a>
 			</br>
 			<a href="/partidos1"> Partidos </a>
 	</body>

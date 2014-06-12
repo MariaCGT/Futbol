@@ -3,9 +3,9 @@
 		<title>Fut_Results</title>
 	</head>
 	 <body>
-		<h2>Jornada poner variable</h2>
+		<h2> El resultado de la jornada número {{ ronda }} es: </h2>
 			%for i in datos['match']:
-				<p> {{ i['visitor'] }} {{ i['local'] }} {{ i['local_goals'] }}-{{ i['visitor_goals'] }}</p>
+				<p> {{ i['visitor'] }}-{{ i['local'] }} {{ i['local_goals'] }}-{{ i['visitor_goals'] }}</p>
 			%end
 </body>
 </html>

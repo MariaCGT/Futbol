@@ -3,10 +3,10 @@
 import requests
 import json
 import os
-from bottle import request, get, post, run, debug, route, template,error, TEMPLATE_PATH
+from bottle import request, get, post, run, debug, route, template, error, TEMPLATE_PATH
 import bottle
 
-#Pagina principal de la app, con las distintas opciones de búsqueda
+#Pagina principal con las distintas opciones de búsqueda
 
 @route('/')
 def buscar():
@@ -27,12 +27,18 @@ def clasificacion1():
 	datos = json.loads(r.text.encode("utf-8"))
 	return template('clasificacion1',datos=datos)
 	
-@route('/jornadas1')
+@get('/pedir_jornada1')
+def pedir_jornada1():
+	return template('pedir_jornada1')
+	
+@post('/jornada1')
 def jornadas1():
-	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','league':'1','req':'matchs','round':'12'}
+	global ronda
+	ronda = request.forms.get("ronda")
+	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','league':'1','req':'matchs','round':ronda}
 	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
 	datos = json.loads(r.text.encode("utf-8"))
-	return template('jornada',datos=datos)
+	return template('jornada',datos=datos,ronda=ronda)
 	
 @route('/partidos1')
 def partidos1():

@@ -29,7 +29,8 @@ def clasificacion1():
 	
 @route('/jornadas1')
 def jornadas1():
-	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','league':'1','req':'matchs','round':'12'}
+	ronda = request.forms.get("ronda")
+	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','league':'1','req':'matchs','round':ronda}
 	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
 	datos = json.loads(r.text.encode("utf-8"))
 	return template('jornada',datos=datos)
