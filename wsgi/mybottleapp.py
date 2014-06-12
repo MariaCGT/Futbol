@@ -40,12 +40,18 @@ def jornadas1():
 	datos = json.loads(r.text.encode("utf-8"))
 	return template('jornada',datos=datos,ronda=ronda)
 	
-@route('/partidos1')
+@get('/pedir_fecha1')
+def pedir_fecha1():
+	return template('pedir_fecha1')
+	
+@post('/partidos1')
 def partidos1():
-	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','req':'matchsday','date':'2012-08-19','top':'1','limit':'1'}
+	global fecha
+	fecha = request.forms.get("fecha")
+	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','req':'matchsday','date':fecha}
 	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
 	datos = json.loads(r.text.encode("utf-8"))
-	return template('partido',datos=datos)
+	return template('partidos',datos=datos)
 	
 @route('/clasificacion2')
 def clasificacion1():
