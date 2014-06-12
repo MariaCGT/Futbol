@@ -1,0 +1,15 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Fut_Results</title>
+	</head>
+	<body>
+			<h1> Fut_Results </h1>
+		<h2>Elije que quieres consultar</h2>
+			<a href="/clasificacion1"> Clasificación </a>
+			</br>
+			<a href="/jornadas1"> Jornadas </a>
+			</br>
+			<a href="/partidos1"> Partidos </a>
+	</body>
+</html>

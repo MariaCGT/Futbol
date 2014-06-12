@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Fut_Results</title>
+	</head>
+	<body>
+		<div id="encabezado">
+			<h1> Fut_Results </h1>
+		</div>
+		<h2>Ver las competiciones:</h2>
+		<div>
+			<a href="/espanya">Españolas</a>
+			</br>
+			<a href="/europa">Europeas</a>
+			</br>
+			<a href="/mundial">Mundiales</a>
+		</div>
+	</body>
+</html>

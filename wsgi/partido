@@ -1,0 +1,11 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Fut_Results</title>
+	</head>
+	 <body>
+		<h2>Resultados de la búsqueda</h2>
+			%for i in datos['matches']:
+				<p> {{ i['id'] }} {{ i['local'] }} {{ i['visitor'] }} {{ i['date'] }} {{i['hour']}} {{ i['result'] }}</p>
+			%end
+</body>
+</html>

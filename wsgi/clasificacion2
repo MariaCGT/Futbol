@@ -1,0 +1,13 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Fut_Results</title>
+	</head>
+	 <body>
+		<h2>Resultados de la búsqueda</h2>
+			%contador=1
+			%for i in datos['table']:
+				<p> {{ contador }} {{ i['team'] }} {{ i['points'] }} {{ i['wins'] }} {{i['draws']}} {{ i['losses'] }} {{ i['gf'] }} {{ i['ga'] }} </p>
+				%contador=contador+1
+			%end
+</body>
+</html>
