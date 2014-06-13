@@ -6,7 +6,6 @@
 		<h2> Introduce la fecha a consultar (yyyy-mm-dd) </h2>
 		<form action="/partidos1" method="POST">
 			<b>Fecha:</b><input name="fecha" type="text" />
-			</div>
 			<input value="Buscar" type="submit"/>
 		</form>
 	</body>

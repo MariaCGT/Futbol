@@ -3,9 +3,16 @@
 		<title>Fut_Results</title>
 	</head>
 	 <body>
-		<h2>Resultados de la búsqueda</h2>
-			%for i in partidos:
-				<p> {{ i }}</p>
+		<h2>Los partidos del {{ fecha }}</h2>
+			%for partido in partidos:
+				%for elemento in partido:
+				{{ elemento }}
+				%end
 			%end
+		<h3> Para ver detalles de un partido concreto introduce su identificador</h3>
+		<form action="/detalle_partido" method="POST">
+			<b>Identificador:</b><input name="ident" type="text" />
+			<input value="Buscar" type="submit"/>
+		</form>
 </body>
 </html>

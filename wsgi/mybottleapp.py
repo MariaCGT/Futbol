@@ -6,7 +6,6 @@ import os
 from bottle import request, get, post, run, debug, route, template, error, TEMPLATE_PATH
 import bottle
 
-#Pagina principal con las distintas opciones de búsqueda
 
 @route('/')
 def buscar():
@@ -33,7 +32,6 @@ def pedir_jornada1():
 	
 @post('/jornada1')
 def jornadas1():
-	global ronda
 	ronda = request.forms.get("ronda")
 	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','league':'1','req':'matchs','round':ronda}
 	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
@@ -59,9 +57,25 @@ def partidos1():
 	for i in xrange(rango):
 		comp = datos['matches'][i]['competition_name']
 		if comp == "Liga BBVA":
-			partidos.append(datos['matches'][i]['local'])
+			partidos.append([])
+			partidos[i].append(datos['matches'][i]['id'])
+			partidos[i].append(datos['matches'][i]['local'])
+			partidos[i].append(datos['matches'][i]['visitor'])
+			partidos[i].append(datos['matches'][i]['result'])
+	return template('partidos',fecha=fecha,partidos=partidos)
 	
-	return template('partidos',partidos=partidos)
+@post('/detalle_partido')
+def detalles():
+	ident = request.forms.get("ident")
+	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','req':'match','id':ident}
+	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
+	datos = json.loads(r.text.encode("utf-8"))
+	
+	return template('detalles',datos=datos)
+	
+	
+
+	
 	
 @route('/clasificacion2')
 def clasificacion1():
