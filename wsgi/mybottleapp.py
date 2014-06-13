@@ -7,6 +7,7 @@ from bottle import request, get, post, run, debug, route, template, error, TEMPL
 import bottle
 
 
+
 @route('/')
 def buscar():
 	return template('index')
@@ -18,6 +19,10 @@ def bbva():
 @get('/segunda')
 def segunda():
 	return template('adelante')
+	
+@get('/quiniela')
+def quiniela():
+	return template('quiniela')
     
 @route('/clasificacion1')
 def clasificacion1():
@@ -25,6 +30,14 @@ def clasificacion1():
 	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
 	datos = json.loads(r.text.encode("utf-8"))
 	return template('clasificacion1',datos=datos)
+	
+@post('/quiniela_jornada')
+def quin_jornada():
+	ronda = request.forms.get("jornada")
+	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','req':'quiniela','round':ronda}
+	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
+	datos = json.loads(r.text.encode("utf-8"))
+	return template('mostrar_quiniela', datos=datos, ronda=ronda)
 	
 @get('/pedir_jornada1')
 def pedir_jornada1():
@@ -70,13 +83,9 @@ def detalles():
 	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','req':'match','id':ident}
 	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
 	datos = json.loads(r.text.encode("utf-8"))
-	
 	return template('detalles',datos=datos)
 	
-	
-
-	
-	
+		
 @route('/clasificacion2')
 def clasificacion1():
 	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','league':'2','req':'tables'}

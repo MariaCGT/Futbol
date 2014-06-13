@@ -1,0 +1,14 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Fut_Results</title>
+	</head>
+	 <body>
+		<h2>Quiniela de la Jornada {{ ronda }}</h2>
+		%for i in datos['quiniela']['lines']:
+			<p>{{ i['team1_name'] }}-{{ i['team2_name'] }} {{ i['result'] }}</p>
+		%end
+</body>
+</html>
+
+
+

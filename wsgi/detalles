@@ -4,6 +4,19 @@
 	</head>
 	 <body>
 		<h2>Detalles</h2>
-		{{ datos }}
+		<p>Equipo Local: {{ datos['local'] }} </p><img src="{{ datos['local_shield'] }}"</>
+		<p>Equipo Visitante: {{ datos['visitor'] }} </p><img src="{{ datos['visitor_shield'] }}"</>
+		<p>Resultado: {{ datos['result'] }}</p>
+		<p>Alineación local: </p>
+		%for i in datos['lineups']['visitor']:
+			<p> {{ i['last_name'] }}</p><img src="{{ i['image'] }}"</>
+		%end
+		<p>Alineación visitante: </p>
+		%for i in datos['lineups']['visitor']:
+			<p> {{ i['last_name'] }}</p><img src="{{ i['image'] }}"</>
+		%end
 </body>
 </html>
+
+
+
