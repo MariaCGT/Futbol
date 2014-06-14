@@ -7,7 +7,6 @@ from bottle import request, get, post, run, debug, route, template, error, TEMPL
 import bottle
 
 
-
 @route('/')
 def buscar():
 	return template('index')
@@ -31,6 +30,13 @@ def clasificacion1():
 	datos = json.loads(r.text.encode("utf-8"))
 	return template('clasificacion1',datos=datos)
 	
+@route('/clasificacion2')
+def clasificacion1():
+	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','league':'2','req':'tables'}
+	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
+	datos = json.loads(r.text.encode("utf-8"))
+	return template('clasificacion2',datos=datos)
+	
 @post('/quiniela_jornada')
 def quin_jornada():
 	ronda = request.forms.get("jornada")
@@ -43,10 +49,22 @@ def quin_jornada():
 def pedir_jornada1():
 	return template('pedir_jornada1')
 	
+@get('/pedir_jornada2')
+def pedir_jornada2():
+	return template('pedir_jornada2')
+	
 @post('/jornada1')
-def jornadas1():
+def jornada1():
 	ronda = request.forms.get("ronda")
 	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','league':'1','req':'matchs','round':ronda}
+	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
+	datos = json.loads(r.text.encode("utf-8"))
+	return template('jornada',datos=datos,ronda=ronda)
+	
+@post('/jornada2')
+def jornada2():
+	ronda = request.forms.get("ronda")
+	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','league':'2','req':'matchs','round':ronda}
 	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
 	datos = json.loads(r.text.encode("utf-8"))
 	return template('jornada',datos=datos,ronda=ronda)
@@ -77,6 +95,7 @@ def partidos1():
 			partidos[i].append(datos['matches'][i]['result'])
 	return template('partidos',fecha=fecha,partidos=partidos)
 	
+	
 @post('/detalle_partido')
 def detalles():
 	ident = request.forms.get("ident")
@@ -86,15 +105,6 @@ def detalles():
 	return template('detalles',datos=datos)
 	
 		
-@route('/clasificacion2')
-def clasificacion1():
-	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','league':'2','req':'tables'}
-	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
-	datos = json.loads(r.text.encode("utf-8"))
-	return template('clasificacion2',datos=datos)
-	
-	
-	
 ON_OPENSHIFT = False
 if os.environ.has_key('OPENSHIFT_REPO_DIR'):
     ON_OPENSHIFT = True
