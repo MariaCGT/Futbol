@@ -5,9 +5,11 @@
 	 <body>
 		<h2>Los partidos del {{ fecha }}</h2>
 			%for partido in partidos:
+				<p>
 				%for elemento in partido:
 				{{ elemento }}
 				%end
+				</p>
 			%end
 		<h3> Para ver detalles de un partido concreto introduce su identificador</h3>
 		<form action="/detalle_partido" method="POST">
