@@ -8,7 +8,7 @@
 		<p>Equipo Visitante: {{ datos['visitor'] }} </p><img src="{{ datos['visitor_shield'] }}"</>
 		<p>Resultado: {{ datos['result'] }}</p>
 		<p>Alineación local: </p>
-		%for i in datos['lineups']['visitor']:
+		%for i in datos['lineups']['local']:
 			<p> {{ i['last_name'] }}</p><img src="{{ i['image'] }}"</>
 		%end
 		<p>Alineación visitante: </p>
