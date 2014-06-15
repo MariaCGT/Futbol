@@ -73,9 +73,12 @@ def jornada2():
 def pedir_fecha1():
 	return template('pedir_fecha1')
 	
+@get('/pedir_fecha2')
+def pedir_fecha1():
+	return template('pedir_fecha2')
+	
 @post('/partidos1')
 def partidos1():
-	global fecha
 	fecha = request.forms.get("fecha")
 	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','req':'matchsday','date':fecha}
 	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
@@ -84,18 +87,42 @@ def partidos1():
 	rango=int(len(datos['matches']))
 	partidos = []
 	comp = []
+	j = 0
 
 	for i in xrange(rango):
-		comp = datos['matches'][i]['competition_name']
+		comp = datos['matches'][i]['competition_name'].encode("UTF-8")
 		if comp == "Liga BBVA":
 			partidos.append([])
-			partidos[i].append(datos['matches'][i]['id'])
-			partidos[i].append(datos['matches'][i]['local'])
-			partidos[i].append(datos['matches'][i]['visitor'])
-			partidos[i].append(datos['matches'][i]['result'])
+			partidos[j].append(datos['matches'][i]['id'])
+			partidos[j].append(datos['matches'][i]['local'])
+			partidos[j].append(datos['matches'][i]['visitor'])
+			partidos[j].append(datos['matches'][i]['result'])
+			j = j + 1
 	return template('partidos',fecha=fecha,partidos=partidos)
 	
+@post('/partidos2')
+def partidos2():
+	fecha = request.forms.get("fecha")
+	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','req':'matchsday','date':fecha}
+	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
+	datos = json.loads(r.text)
 	
+	rango=int(len(datos['matches']))
+	partidos = []
+	comp = []
+	j = 0
+
+	for i in xrange(rango):
+		comp = datos['matches'][i]['competition_name'].encode("UTF-8")
+		if comp == "Segunda División":
+			partidos.append([])
+			partidos[j].append(datos['matches'][i]['id'])
+			partidos[j].append(datos['matches'][i]['local'])
+			partidos[j].append(datos['matches'][i]['visitor'])
+			partidos[j].append(datos['matches'][i]['result'])
+			j = j + 1
+	return template('partidos',fecha=fecha,partidos=partidos)
+
 @post('/detalle_partido')
 def detalles():
 	ident = request.forms.get("ident")
