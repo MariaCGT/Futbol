@@ -4,9 +4,12 @@
 	</head>
 	 <body>
 		<h2>Detalles</h2>
+		
+		<p>Fecha y hora: {{ datos['schedule'] }}</p>
+		<p>Liga: {{ datos['league'] }}</p>
+		<p>Resultado: {{ datos['result'] }}</p>
 		<p>Equipo Local: {{ datos['local'] }} </p><img src="{{ datos['local_shield'] }}"</>
 		<p>Equipo Visitante: {{ datos['visitor'] }} </p><img src="{{ datos['visitor_shield'] }}"</>
-		<p>Resultado: {{ datos['result'] }}</p>
 		<p>Alineación local: </p>
 		%for i in datos['lineups']['local']:
 			<p> {{ i['last_name'] }}</p><img src="{{ i['image'] }}"</>
@@ -14,6 +17,26 @@
 		<p>Alineación visitante: </p>
 		%for i in datos['lineups']['visitor']:
 			<p> {{ i['last_name'] }}</p><img src="{{ i['image'] }}"</>
+		%end
+		<p>Goles:</p>
+		%for i in datos['events']['goals']:
+			<p>Minuto: {{ i['minute'] }}</p>
+			<p>Jugador: {{ i['player'] }}</p>
+			<p>Equipo: {{ i['team'] }}</p>
+		%end
+		<p>Tarjetas:</p>
+		%for i in datos['events']['cards']:
+			<p>Minuto: {{ i['minute'] }}</p>
+			<p>Tipo: {{ i['action'] }}</p>
+			<p>Jugador: {{ i['player'] }}</p>
+			<p>Equipo: {{ i['team'] }}</p>
+		%end
+		<p>Cambios:</p>
+		%for i in datos['events']['changes']:
+			<p>Minuto: {{ i['minute'] }}</p>
+			<p>Tipo: {{ i['action'] }}</p>
+			<p>Jugador: {{ i['player'] }}</p>
+			<p>Equipo: {{ i['team'] }}</p>
 		%end
 </body>
 </html>
