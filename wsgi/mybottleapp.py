@@ -6,7 +6,6 @@ import os
 from bottle import request, get, post, run, debug, route, template, error, TEMPLATE_PATH
 import bottle
 
-
 @route('/')
 def buscar():
 	return template('index')
@@ -98,10 +97,13 @@ def partidos1():
 @post('/partidos2')
 def partidos2():
 	fecha = request.forms.get("fecha")
-	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','req':'matchsday','date':fecha}
-	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
-	datos = json.loads(r.text)
-	
+	if fecha == '%-%-%':
+		dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','req':'matchsday','date':fecha}
+		r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
+		datos = json.loads(r.text)
+	else:
+		return template('error_formatofecha',)
+		
 	if datos['matches'] == False:
 		return template('error_fecha',fecha=fecha)
 	else:
