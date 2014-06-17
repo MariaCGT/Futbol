@@ -19,10 +19,6 @@ def bbva():
 def segunda():
 	return template('adelante')
 	
-@get('/quiniela')
-def quiniela():
-	return template('quiniela')
-    
 @route('/clasificacion1')
 def clasificacion1():
 	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','league':'1','req':'tables'}
@@ -36,14 +32,7 @@ def clasificacion1():
 	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
 	datos = json.loads(r.text.encode("utf-8"))
 	return template('clasificacion2',datos=datos)
-	
-@post('/quiniela_jornada')
-def quin_jornada():
-	ronda = request.forms.get("jornada")
-	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','req':'quiniela','round':ronda}
-	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
-	datos = json.loads(r.text.encode("utf-8"))
-	return template('mostrar_quiniela', datos=datos, ronda=ronda)
+
 	
 @get('/pedir_jornada1')
 def pedir_jornada1():
@@ -59,7 +48,10 @@ def jornada1():
 	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','league':'1','req':'matchs','round':ronda}
 	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
 	datos = json.loads(r.text.encode("utf-8"))
-	return template('jornada',datos=datos,ronda=ronda)
+	if datos['match'] == False:
+		return template('error_jornada',ronda=ronda)
+	else:
+		return template('jornada',datos=datos,ronda=ronda)
 	
 @post('/jornada2')
 def jornada2():
@@ -131,6 +123,19 @@ def detalles():
 	datos = json.loads(r.text.encode("utf-8"))
 	return template('detalles',datos=datos)
 	
+@get('/quiniela')
+def quiniela():
+	return template('quiniela')
+	
+	
+@post('/quiniela_jornada')
+def quin_jornada():
+	ronda = request.forms.get("jornada")
+	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','req':'quiniela','round':ronda}
+	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
+	datos = json.loads(r.text.encode("utf-8"))
+	return template('mostrar_quiniela', datos=datos, ronda=ronda)
+
 @error(404)
 def error404(error):
 	return template('errores')

@@ -3,13 +3,9 @@
 		<title>Fut_Results</title>
 	</head>
 	 <body>
-		{% if datos['match'] == "False" %}
-			<p> No hay datos para esta consulta</p>
-		{% else %}
 			<h2> El resultado de la jornada número {{ ronda }} es: </h2>
-				{% for i in datos['match'] %}
+				%for i in datos['match']:
 					<p> {{ i['visitor'] }}-{{ i['local'] }} {{ i['local_goals'] }}-{{ i['visitor_goals'] }}</p>
-				{% endfor %}
-		{% end if %}
+				%end
 </body>	
 </html>
