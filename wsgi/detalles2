@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Fut_Results</title>
+	</head>
+	 <body>
+		<h2>Detalles</h2>
+		
+		<p>Fecha y hora: {{ datos['schedule'] }}</p>
+		<p>Liga: {{ datos['league'] }}</p>
+		<p>Resultado: {{ datos['result'] }}</p>
+		<p>Equipo Local: {{ datos['local'] }} </p><img src="{{ datos['local_shield'] }}"</>
+		<p>Equipo Visitante: {{ datos['visitor'] }} </p><img src="{{ datos['visitor_shield'] }}"</>
+		<p>Alineación local: </p>
+		%for i in datos['lineups']['local']:
+			<p> {{ i['last_name'] }}</p><img src="{{ i['image'] }}"</>
+		%end
+		<p>Alineación visitante: </p>
+		%for i in datos['lineups']['visitor']:
+			<p> {{ i['last_name'] }}</p><img src="{{ i['image'] }}"</>
+		%end
+		<p>Goles:</p>
+		%for gol in goles:
+			<p>
+			%for elemento in gol:
+			{{ elemento }}
+			%end
+			</p>
+		%end
+</body>
+</html>
+
