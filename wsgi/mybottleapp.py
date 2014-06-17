@@ -32,7 +32,6 @@ def clasificacion1():
 	datos = json.loads(r.text.encode("utf-8"))
 	return template('clasificacion2',datos=datos)
 
-	
 @get('/pedir_jornada1')
 def pedir_jornada1():
 	return template('pedir_jornada1')
@@ -125,8 +124,6 @@ def partidos2():
 		else:
 			return template('partidos',fecha=fecha,partidos=partidos)
 			
-
-
 @post('/detalle_partido')
 def detalles():
 	ident = request.forms.get("ident")
@@ -138,8 +135,7 @@ def detalles():
 @get('/quiniela')
 def quiniela():
 	return template('quiniela')
-	
-	
+		
 @post('/quiniela_jornada')
 def quin_jornada():
 	ronda = request.forms.get("jornada")
@@ -152,7 +148,9 @@ def quin_jornada():
 def error404(error):
 	return template('errores')
 	
-
+@error(500)
+def error500(error):
+	return template('errores')
 		
 		
 		
