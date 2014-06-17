@@ -59,7 +59,10 @@ def jornada2():
 	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','league':'2','req':'matchs','round':ronda}
 	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
 	datos = json.loads(r.text.encode("utf-8"))
-	return template('jornada',datos=datos,ronda=ronda)
+	if datos['match'] == False:
+		return template('error_jornada',ronda=ronda)
+	else:
+		return template('jornada',datos=datos,ronda=ronda)
 	
 @get('/pedir_fecha1')
 def pedir_fecha1():
@@ -80,7 +83,7 @@ def partidos1():
 	partidos = []
 	comp = []
 	j = 0
-
+	
 	for i in xrange(rango):
 		comp = datos['matches'][i]['competition_name'].encode("UTF-8")
 		if comp == "Liga BBVA":
@@ -99,21 +102,28 @@ def partidos2():
 	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
 	datos = json.loads(r.text)
 	
-	rango=int(len(datos['matches']))
-	partidos = []
-	comp = []
-	j = 0
+	if datos['matches'] == False:
+		return template('error_fecha',fecha=fecha)
+	else:
+		rango=int(len(datos['matches']))
+		partidos = []
+		comp = []
+		j = 0
+		for i in xrange(rango):
+			comp = datos['matches'][i]['competition_name'].encode("UTF-8")
+			if comp == "Segunda División":
+				partidos.append([])
+				partidos[j].append(datos['matches'][i]['id'])
+				partidos[j].append(datos['matches'][i]['local'])
+				partidos[j].append(datos['matches'][i]['visitor'])
+				partidos[j].append(datos['matches'][i]['result'])
+				j = j + 1
+		if partidos == []:
+			return template('error_fecha',fecha=fecha)
+		else:
+			return template('partidos',fecha=fecha,partidos=partidos)
+			
 
-	for i in xrange(rango):
-		comp = datos['matches'][i]['competition_name'].encode("UTF-8")
-		if comp == "Segunda División":
-			partidos.append([])
-			partidos[j].append(datos['matches'][i]['id'])
-			partidos[j].append(datos['matches'][i]['local'])
-			partidos[j].append(datos['matches'][i]['visitor'])
-			partidos[j].append(datos['matches'][i]['result'])
-			j = j + 1
-	return template('partidos',fecha=fecha,partidos=partidos)
 
 @post('/detalle_partido')
 def detalles():
