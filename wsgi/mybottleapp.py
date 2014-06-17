@@ -131,6 +131,13 @@ def detalles():
 	datos = json.loads(r.text.encode("utf-8"))
 	return template('detalles',datos=datos)
 	
+@error(404)
+def error404(error):
+	return template('errores')
+	
+
+		
+		
 		
 ON_OPENSHIFT = False
 if os.environ.has_key('OPENSHIFT_REPO_DIR'):
