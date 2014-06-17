@@ -23,14 +23,14 @@ def clasificacion1():
 	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','league':'1','req':'tables'}
 	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
 	datos = json.loads(r.text.encode("utf-8"))
-	return template('clasificacion1',datos=datos)
+	return template('clasificacion',datos=datos)
 	
 @route('/clasificacion2')
 def clasificacion1():
 	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','league':'2','req':'tables'}
 	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
 	datos = json.loads(r.text.encode("utf-8"))
-	return template('clasificacion2',datos=datos)
+	return template('clasificacion',datos=datos)
 
 @get('/pedir_jornada1')
 def pedir_jornada1():
