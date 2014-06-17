@@ -77,32 +77,33 @@ def partidos1():
 	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
 	datos = json.loads(r.text.encode("utf-8"))
 	
-	rango=int(len(datos['matches']))
-	partidos = []
-	comp = []
-	j = 0
-	
-	for i in xrange(rango):
-		comp = datos['matches'][i]['competition_name'].encode("UTF-8")
-		if comp == "Liga BBVA":
-			partidos.append([])
-			partidos[j].append(datos['matches'][i]['id'])
-			partidos[j].append(datos['matches'][i]['local'])
-			partidos[j].append(datos['matches'][i]['visitor'])
-			partidos[j].append(datos['matches'][i]['result'])
-			j = j + 1
-	return template('partidos',fecha=fecha,partidos=partidos)
+	if datos['matches'] == False:
+		return template('error_fecha',fecha=fecha)
+	else:
+		rango=int(len(datos['matches']))
+		partidos = []
+		comp = []
+		j = 0
+		for i in xrange(rango):
+			comp = datos['matches'][i]['competition_name'].encode("UTF-8")
+			if comp == "Liga BBVA":
+				partidos.append([])
+				partidos[j].append(datos['matches'][i]['id'])
+				partidos[j].append(datos['matches'][i]['local'])
+				partidos[j].append(datos['matches'][i]['visitor'])
+				partidos[j].append(datos['matches'][i]['result'])
+				j = j + 1
+		if partidos == []:
+			return template('error_fecha',fecha=fecha)
+		else:
+			return template('partidos',fecha=fecha,partidos=partidos)
 	
 @post('/partidos2')
 def partidos2():
 	fecha = request.forms.get("fecha")
-	if fecha == '%-%-%':
-		dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','req':'matchsday','date':fecha}
-		r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
-		datos = json.loads(r.text)
-	else:
-		return template('error_formatofecha',)
-		
+	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','req':'matchsday','date':fecha}
+	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
+	datos = json.loads(r.text)
 	if datos['matches'] == False:
 		return template('error_fecha',fecha=fecha)
 	else:
@@ -130,7 +131,11 @@ def detalles():
 	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','req':'match','id':ident}
 	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
 	datos = json.loads(r.text.encode("utf-8"))
-	return template('detalles',datos=datos)
+	
+	if datos['visitor'] == None :
+		return template('error_detalles')
+	else:
+		return template('detalles',datos=datos)
 	
 @get('/quiniela')
 def quiniela():
