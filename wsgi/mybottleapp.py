@@ -131,14 +131,52 @@ def detalles():
 	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','req':'match','id':ident}
 	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
 	datos = json.loads(r.text.encode("utf-8"))
-	
+		
 	if datos['visitor'] == None:
 		return template('error_detalles')
+		
 	if "goals" in datos['events']:
-		print "existe"
+		rango=int(len(datos['events']['goals']))
+		j = 0
+		goles = []
+		for i in xrange(rango):
+			goles.append([])
+			goles[j].append(datos['events']['goals'][i]['minute'])
+			goles[j].append(datos['events']['goals'][i]['player'])
+			goles[j].append(datos['events']['goals'][i]['team'])
+			j = j + 1
 	else:
-		print "no existe"
-
+		goles = "-"
+		
+	if "cards" in datos['events']:
+		rango=int(len(datos['events']['cards']))
+		j = 0
+		tarjetas = []
+		for i in xrange(rango):
+			tarjetas.append([])
+			tarjetas[j].append(datos['events']['cards'][i]['minute'])
+			tarjetas[j].append(datos['events']['cards'][i]['action'])
+			tarjetas[j].append(datos['events']['cards'][i]['player'])
+			tarjetas[j].append(datos['events']['cards'][i]['team'])
+			j = j + 1
+	else:
+		tarjetas = "-"
+		
+	if "changes" in datos['events']:
+		rango=int(len(datos['events']['changes']))
+		j = 0
+		cambios = []
+		for i in xrange(rango):
+			cambios.append([])
+			cambios[j].append(datos['events']['changes'][i]['minute'])
+			cambios[j].append(datos['events']['changes'][i]['action'])
+			cambios[j].append(datos['events']['changes'][i]['player'])
+			cambios[j].append(datos['events']['changes'][i]['team'])
+			j = j + 1
+	else:
+		cambios = "-"
+		
+	return template('detalles',goles=goles,tarjetas=tarjetas,cambios=cambios,datos=datos)
 	
 @get('/quiniela')
 def quiniela():
