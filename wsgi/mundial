@@ -4,16 +4,7 @@
 		<title>Fut_Results</title>
 	</head>
 	<body>
-		<div id="encabezado">
 			<h1> Fut_Results </h1>
-		</div>
-		<h2>Ver las competiciones:</h2>
-		<div>
-			<a href="/espanya">Españolas</a>
-			</br>
-			<a href="/europa">Europeas</a>
-			</br>
-			<a href="/mundial">Mundiales</a>
-		</div>
+		<h2>Mundial prueba</h2>
 	</body>
 </html>

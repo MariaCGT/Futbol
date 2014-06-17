@@ -6,10 +6,10 @@
 	<body>
 			<h1> Fut_Results </h1>
 		<h2>Elije que quieres consultar</h2>
-			<a href="/clasificacion1"> Clasificación </a>
+			<a href="/bbva/clasificacion"> Clasificación </a>
 			</br>
-			<a href="/pedir_jornada1"> Jornadas </a>
+			<a href="/bbva/pedir_jornada"> Jornadas </a>
 			</br>
-			<a href="/pedir_fecha1"> Partidos </a>
+			<a href="/bbva/pedir_fecha"> Partidos </a>
 	</body>
 </html>

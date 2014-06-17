@@ -4,7 +4,7 @@
 	</head>
 	<body>
 		<h2> Introduce el número de jornada a consultar </h2>
-		<form action="/jornada1" method="POST">
+		<form action="/bbva/jornada" method="POST">
 			<b>Jornada:</b>	<input name="ronda" type="text" />
 			</div>
 			<input value="Buscar" type="submit"/>

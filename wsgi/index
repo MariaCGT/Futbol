@@ -6,14 +6,13 @@
 	<body>
 			<h1> Fut_Results </h1>
 		<h2>Elige que quieres consultar</h2>
-			<a href="bbva">Liga BBVA</a>
+			<a href="/bbva">Liga BBVA</a>
 			</br>
-			<a href="segunda">Liga Adelante</a>
+			<a href="/adelante">Liga Adelante</a>
 			</br>
-			<a href="quiniela">Quiniela</a>
+			<a href="/quiniela">Quiniela</a>
 			</br>
-			<a href="competiciones">Otras competiciones</a>
-			</br>
-			
+			<a href="/mundial">Mundial</a>
+			</br>			
 	</body>
 </html>

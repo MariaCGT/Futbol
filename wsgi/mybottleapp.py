@@ -14,33 +14,37 @@ def buscar():
 def bbva():
     return template('bbva')
     
-@get('/segunda')
-def segunda():
+@get('/adelante')
+def adelante():
 	return template('adelante')
 	
-@route('/clasificacion1')
+@get('/mundial')
+def segunda():
+	return template('mundial')
+	
+@route('/bbva/clasificacion')
 def clasificacion1():
 	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','league':'1','req':'tables'}
 	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
 	datos = json.loads(r.text.encode("utf-8"))
 	return template('clasificacion',datos=datos)
 	
-@route('/clasificacion2')
+@route('/adelante/clasificacion')
 def clasificacion1():
 	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','league':'2','req':'tables'}
 	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
 	datos = json.loads(r.text.encode("utf-8"))
 	return template('clasificacion',datos=datos)
 
-@get('/pedir_jornada1')
+@get('/bbva/pedir_jornada')
 def pedir_jornada1():
 	return template('pedir_jornada1')
 	
-@get('/pedir_jornada2')
+@get('/adelante/pedir_jornada')
 def pedir_jornada2():
 	return template('pedir_jornada2')
 	
-@post('/jornada1')
+@post('/bbva/jornada')
 def jornada1():
 	ronda = request.forms.get("ronda")
 	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','league':'1','req':'matchs','round':ronda}
@@ -51,7 +55,7 @@ def jornada1():
 	else:
 		return template('jornada',datos=datos,ronda=ronda)
 	
-@post('/jornada2')
+@post('/adelante/jornada')
 def jornada2():
 	ronda = request.forms.get("ronda")
 	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','league':'2','req':'matchs','round':ronda}
@@ -62,15 +66,15 @@ def jornada2():
 	else:
 		return template('jornada',datos=datos,ronda=ronda)
 	
-@get('/pedir_fecha1')
+@get('/bbva/pedir_fecha')
 def pedir_fecha1():
 	return template('pedir_fecha1')
 	
-@get('/pedir_fecha2')
+@get('/adelante/pedir_fecha')
 def pedir_fecha1():
 	return template('pedir_fecha2')
 	
-@post('/partidos1')
+@post('/bbva/partidos')
 def partidos1():
 	fecha = request.forms.get("fecha")
 	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','req':'matchsday','date':fecha}
@@ -98,7 +102,7 @@ def partidos1():
 		else:
 			return template('partidos',fecha=fecha,partidos=partidos)
 	
-@post('/partidos2')
+@post('/adelante/partidos')
 def partidos2():
 	fecha = request.forms.get("fecha")
 	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','req':'matchsday','date':fecha}
