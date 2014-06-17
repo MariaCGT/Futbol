@@ -132,10 +132,13 @@ def detalles():
 	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
 	datos = json.loads(r.text.encode("utf-8"))
 	
-	if datos['visitor'] == None :
+	if datos['visitor'] == None:
 		return template('error_detalles')
+	if "goals" in datos['events']:
+		print "existe"
 	else:
-		return template('detalles',datos=datos)
+		print "no existe"
+
 	
 @get('/quiniela')
 def quiniela():

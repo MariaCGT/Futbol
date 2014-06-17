@@ -19,10 +19,12 @@
 			<p> {{ i['last_name'] }}</p><img src="{{ i['image'] }}"</>
 		%end
 		<p>Goles:</p>
-		%for i in datos['events']['goals']:
-			<p>Minuto: {{ i['minute'] }}</p>
-			<p>Jugador: {{ i['player'] }}</p>
-			<p>Equipo: {{ i['team'] }}</p>
+		%if defined(datos['events']['goals']):
+			%for i in datos['events']['goals']:
+				<p>Minuto: {{ i['minute'] }}</p>
+				<p>Jugador: {{ i['player'] }}</p>
+				<p>Equipo: {{ i['team'] }}</p>
+			%end
 		%end
 		<p>Tarjetas:</p>
 		%for i in datos['events']['cards']:

@@ -5,7 +5,12 @@
 	 <body>
 			<h2> El resultado de la jornada número {{ ronda }} es: </h2>
 				%for i in datos['match']:
-					<p> {{ i['visitor'] }}-{{ i['local'] }} {{ i['local_goals'] }}-{{ i['visitor_goals'] }}</p>
+					<p> {{ i['visitor'] }}-{{ i['local'] }} {{ i['local_goals'] }}-{{ i['visitor_goals'] }} {{ i['id'] }}</p>
 				%end
-</body>	
+			<h2> Para ver detalles de un partido concreto introduce su identificador</h2>
+			<form action="/detalle_partido" method="POST">
+			<b>Identificador:</b><input name="ident" type="text" />
+			<input value="Buscar" type="submit"/>
+			</form>
+	</body>	
 </html>
