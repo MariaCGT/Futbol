@@ -191,6 +191,17 @@ def grupos_mundial():
 	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
 	datos = json.loads(r.text.encode("utf-8"))
 	return template('clasificacion_grupo', datos=datos,grupo=grupo)
+	
+@post('/jornada_mundial')
+def jornada():
+	ronda = request.forms.get("ronda")
+	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','league':'136','req':'matchs','round':ronda}
+	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
+	datos = json.loads(r.text.encode("utf-8"))
+	if datos['match'] == False:
+		return template('error_jornada',ronda=ronda)
+	else:
+		return template('jornada',datos=datos,ronda=ronda)
 
 @error(404)
 def error404(error):

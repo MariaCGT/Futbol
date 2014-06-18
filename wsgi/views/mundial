@@ -18,9 +18,13 @@
 					<option value="7"> Grupo 7 </option>
 					<option value="8"> Grupo 8 </option>
 				</select>
-			<form action="/grupos_mundial" method="POST">
+				<form action="/grupos_mundial" method="POST">
+					<input value="Buscar" type="submit"/>
+				</form>
+			</form>		
+			<form action="/jornada_mundial" method="POST">
+				<h3>Jornada:</h3>	<input name="ronda" type="text" />
 				<input value="Buscar" type="submit"/>
 			</form>
-			</form>		
-	</body>
+		</body>
 </html>
