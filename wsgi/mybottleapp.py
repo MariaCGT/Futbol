@@ -180,7 +180,6 @@ def quin_jornada():
 	datos = json.loads(r.text.encode("utf-8"))
 	return template('mostrar_quiniela', datos=datos, ronda=ronda)
 
-	
 @get('/mundial')
 def segunda():
 	return template('mundial')
@@ -191,7 +190,7 @@ def grupos_mundial():
 	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','league':'136','req':'tables','group':grupo}
 	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
 	datos = json.loads(r.text.encode("utf-8"))
-	return template('clasificacion_grupo', datos=datos)
+	return template('clasificacion_grupo', datos=datos,grupo=grupo)
 
 @error(404)
 def error404(error):
