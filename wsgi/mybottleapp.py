@@ -44,21 +44,11 @@ def pedir_jornada1():
 def pedir_jornada2():
 	return template('pedir_jornada2')
 	
-@post('/bbva/jornada')
-def jornada1():
+@post('/jornada')
+def jornada():
+	liga = request.forms.get("liga")
 	ronda = request.forms.get("ronda")
-	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','league':'1','req':'matchs','round':ronda}
-	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
-	datos = json.loads(r.text.encode("utf-8"))
-	if datos['match'] == False:
-		return template('error_jornada',ronda=ronda)
-	else:
-		return template('jornada',datos=datos,ronda=ronda)
-	
-@post('/adelante/jornada')
-def jornada2():
-	ronda = request.forms.get("ronda")
-	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','league':'2','req':'matchs','round':ronda}
+	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','league':liga,'req':'matchs','round':ronda}
 	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
 	datos = json.loads(r.text.encode("utf-8"))
 	if datos['match'] == False:
@@ -67,11 +57,11 @@ def jornada2():
 		return template('jornada',datos=datos,ronda=ronda)
 	
 @get('/bbva/pedir_fecha')
-def pedir_fecha1():
+def pedir_fecha():
 	return template('pedir_fecha1')
 	
 @get('/adelante/pedir_fecha')
-def pedir_fecha1():
+def pedir_fecha():
 	return template('pedir_fecha2')
 	
 @post('/bbva/partidos')
