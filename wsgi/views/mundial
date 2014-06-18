@@ -4,7 +4,23 @@
 		<title>Fut_Results</title>
 	</head>
 	<body>
-			<h1> Fut_Results </h1>
-		<h2>Mundial prueba</h2>
+		<h1> Fut_Results </h1>
+			<h2> Fase de grupos </h2>
+			<h3> Elige un grupo para ver la clasificación </h3>
+			<form action="/grupos_mundial" method="POST">
+				<select name="grupo">
+					<option value="1"> Grupo 1 </option>
+					<option value="2"> Grupo 2 </option>
+					<option value="3"> Grupo 3 </option>
+					<option value="4"> Grupo 4 </option>
+					<option value="5"> Grupo 5 </option>
+					<option value="6"> Grupo 6 </option>
+					<option value="7"> Grupo 7 </option>
+					<option value="8"> Grupo 8 </option>
+				</select>
+			<form action="/grupos_mundial" method="POST">
+				<input value="Buscar" type="submit"/>
+			</form>
+			</form>		
 	</body>
 </html>

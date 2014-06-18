@@ -18,10 +18,6 @@ def bbva():
 def adelante():
 	return template('adelante')
 	
-@get('/mundial')
-def segunda():
-	return template('mundial')
-	
 @route('/bbva/clasificacion')
 def clasificacion1():
 	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','league':'1','req':'tables'}
@@ -183,6 +179,19 @@ def quin_jornada():
 	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
 	datos = json.loads(r.text.encode("utf-8"))
 	return template('mostrar_quiniela', datos=datos, ronda=ronda)
+
+	
+@get('/mundial')
+def segunda():
+	return template('mundial')
+	
+@post('/grupos_mundial')
+def grupos_mundial():
+	grupo = request.forms.get("grupo")
+	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','league':'136','req':'tables','group':grupo}
+	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
+	datos = json.loads(r.text.encode("utf-8"))
+	return template('clasificacion_grupo', datos=datos)
 
 @error(404)
 def error404(error):
