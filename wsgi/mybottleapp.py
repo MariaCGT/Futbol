@@ -18,10 +18,6 @@ def bbva():
 def adelante():
 	return template('adelante')
 	
-@get('/mundial')
-def segunda():
-	return template('mundial')
-	
 @route('/bbva/clasificacion')
 def clasificacion1():
 	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','league':'1','req':'tables'}
@@ -44,21 +40,11 @@ def pedir_jornada1():
 def pedir_jornada2():
 	return template('pedir_jornada2')
 	
-@post('/bbva/jornada')
-def jornada1():
+@post('/jornada')
+def jornada():
+	liga = request.forms.get("liga")
 	ronda = request.forms.get("ronda")
-	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','league':'1','req':'matchs','round':ronda}
-	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
-	datos = json.loads(r.text.encode("utf-8"))
-	if datos['match'] == False:
-		return template('error_jornada',ronda=ronda)
-	else:
-		return template('jornada',datos=datos,ronda=ronda)
-	
-@post('/adelante/jornada')
-def jornada2():
-	ronda = request.forms.get("ronda")
-	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','league':'2','req':'matchs','round':ronda}
+	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','league':liga,'req':'matchs','round':ronda}
 	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
 	datos = json.loads(r.text.encode("utf-8"))
 	if datos['match'] == False:
@@ -182,6 +168,19 @@ def detalles():
 		
 	return template('detalles',goles=goles,tarjetas=tarjetas,cambios=cambios,datos=datos)
 	
+@get('/mundial/clasificacion')
+def mund_clas():
+	clasificacion = []
+	j = 0
+	for i in xrange(0,9):
+		clasificacion.append([])
+		dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','league':'136','req':'tables','group':i}
+		r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
+		datos = json.loads(r.text.encode("utf-8"))
+		clasificacion[j].append(datos)
+		j = j + 1
+	return template('mundial', datos=clasificacion)
+	
 @get('/quiniela')
 def quiniela():
 	return template('quiniela')
@@ -193,6 +192,7 @@ def quin_jornada():
 	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
 	datos = json.loads(r.text.encode("utf-8"))
 	return template('mostrar_quiniela', datos=datos, ronda=ronda)
+
 
 @error(404)
 def error404(error):
