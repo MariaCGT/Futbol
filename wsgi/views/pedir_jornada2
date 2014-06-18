@@ -4,9 +4,9 @@
 	</head>
 	<body>
 		<h2> Introduce el número de jornada a consultar </h2>
-		<form action="/jornada" method="POST">
+		<form action="/adelante/jornada" method="POST">
 			<b>Jornada:</b>	<input name="ronda" type="text" />
-			<input type="hidden" name="liga" value="2" />
+			</div>
 			<input value="Buscar" type="submit"/>
 		</form>
 	</body>
