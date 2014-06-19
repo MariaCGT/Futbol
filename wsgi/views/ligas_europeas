@@ -6,15 +6,8 @@
 	<body>
 			<h1> Fut_Results </h1>
 		<h2>Elige que quieres consultar</h2>
-			<a href="/bbva"> Liga BBVA </a>
+			<a href="/ligas_europeas/clasificacion"> Clasificación </a>
 			</br>
-			<a href="/adelante"> Liga Adelante </a>
-			</br>
-			<a href="/quiniela"> Quiniela </a>
-			</br>
-			<a href="/mundial"> Mundial </a>
-			</br>	
-			<a href="/ligas_europeas"> Ligas europeas </a>
-			</br>		
+			<a href="/ligas_europeas/pedir_jornada"> Jornadas </a>
 	</body>
 </html>

@@ -47,6 +47,7 @@ def jornada():
 	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','league':liga,'req':'matchs','round':ronda}
 	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
 	datos = json.loads(r.text.encode("utf-8"))
+	
 	if datos['match'] == False:
 		return template('error_jornada',ronda=ronda)
 	else:
@@ -94,6 +95,7 @@ def partidos2():
 	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','req':'matchsday','date':fecha}
 	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
 	datos = json.loads(r.text)
+	
 	if datos['matches'] == False:
 		return template('error_fecha',fecha=fecha)
 	else:
@@ -121,6 +123,7 @@ def detalles():
 	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','req':'match','id':ident}
 	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
 	datos = json.loads(r.text.encode("utf-8"))
+	
 		
 	if datos['visitor'] == None:
 		return template('error_detalles')
@@ -165,11 +168,11 @@ def detalles():
 			j = j + 1
 	else:
 		cambios = "-"
-		
+			
 	return template('detalles',goles=goles,tarjetas=tarjetas,cambios=cambios,datos=datos)
 	
 @get('/quiniela')
-def quiniela():
+def quiniela(): 
 	return template('quiniela')
 		
 @post('/quiniela_jornada')
@@ -193,16 +196,50 @@ def grupos_mundial():
 	return template('clasificacion_grupo', datos=datos,grupo=grupo)
 	
 @post('/jornada_mundial')
-def jornada():
+def jornada_mundial():
 	ronda = request.forms.get("ronda")
 	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','league':'136','req':'matchs','round':ronda}
 	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
 	datos = json.loads(r.text.encode("utf-8"))
+	
 	if datos['match'] == False:
 		return template('error_jornada',ronda=ronda)
 	else:
 		return template('jornada',datos=datos,ronda=ronda)
+		
+@get('/ligas_europeas')
+def ligas_europeas():
+	return template('ligas_europeas')
+	
+@get('/ligas_europeas/clasificacion')
+def ligas_clas():
+	return template('ligas_clas')
 
+@post('/ligas_europeas/clasificacion/resultado')
+def ligas_result():
+	identificador = request.forms.get("identificador")
+	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','league':identificador,'req':'tables'}
+	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
+	datos = json.loads(r.text.encode("utf-8"))
+	return template('clasificacion',datos=datos)
+	
+@get('/ligas_europeas/pedir_jornada')
+def ligas_jorn():
+	return template('ligas_jorn')
+	
+@post('/ligas_europeas/pedir_jornada/resultado')
+def ligas_jornada():
+	liga = request.forms.get("identificador")
+	ronda = request.forms.get("num_jornada")
+	dicc_parametros = {'key':'94c694751928db22f60b189594f8c5b6','format':'json','league':liga,'req':'matchs','round':ronda}
+	r = requests.get("http://www.resultados-futbol.com/scripts/api/api.php", params=dicc_parametros)
+	datos = json.loads(r.text.encode("utf-8"))
+	
+	if datos['match'] == False:
+		return template('error_jornada',ronda=ronda)
+	else:
+		return template('jornada',datos=datos,ronda=ronda)
+	
 @error(404)
 def error404(error):
 	return template('errores')
