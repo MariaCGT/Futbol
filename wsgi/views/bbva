@@ -2,14 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<title>Fut_Results</title>
+		<link rel="stylesheet" type="text/css" href="/static/hojadeestilo.css" >
+		<link href='http://fonts.googleapis.com/css?family=Raleway:700' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
+		<div id="caja">
 			<h1> Fut_Results </h1>
-		<h2>Elige que quieres consultar</h2>
-			<a href="/bbva/clasificacion"> Clasificación </a>
-			</br>
-			<a href="/bbva/pedir_jornada"> Jornadas </a>
-			</br>
-			<a href="/bbva/pedir_fecha"> Partidos </a>
+			<img src="/static/ligabbva.jpg" width=270px height=140px;/>
+			<br/>
+			<br/>
+			<br/>
+			<a class="boton" href="/bbva/clasificacion"> Clasificación </a>
+			<a class="boton" href="/bbva/pedir_jornada"> Jornadas </a>
+			<a class="boton" href="/bbva/pedir_fecha"> Partidos </a>
+			<br/>
+			<br/>
+			<br/>
+			<a class="boton" href="/"> Inicio </a>
+		</div>
 	</body>
 </html>

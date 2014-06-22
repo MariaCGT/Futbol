@@ -1,8 +1,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<title>Fut_Results</title>
+		<link rel="stylesheet" type="text/css" href="/static/hojadeestilo.css" >
+		<link href='http://fonts.googleapis.com/css?family=Raleway:700' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
-			<h2> No hay detalles para este partido </h2>
+	<div id="caja">
+		<h1> Fut_Results </h1>
+		<div id="errores">
+			<p> No hay detalles para este partido </p>
+		</div>
+		<a class="boton" href="/"> Inicio </a>
+		<a class="boton" href="javascript:history.go(-1)"> Consulta otro partido </a>
+		<a class="boton" href="/adelante/pedir_jornada"> Consulta otra jornada </a>
+	</div>
 	</body>
 </html>

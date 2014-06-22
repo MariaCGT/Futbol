@@ -14,6 +14,37 @@ background-color: #ffffff;
 text-align: center;
 }
 
+#boton_inicio
+#boton_atras
+
+
+a {
+margin: 1em 0;
+float: center;
+clear: left;
+color: #008000;
+font-size: 30px;
+text-align: center;
+word-spacing: 10px;
+}
+
+a.boton {
+text-decoration: none;
+text-align: center;
+background: #FFFAFA;
+color: #9ACD32;
+border: 1px outset #FEFEDC;
+padding: 5px 20px 5px 20px;
+}
+
+a.boton:hover {
+background: #CCB;
+}
+
+a.boton:active {
+border: 1px inset #000;
+}
+
 #bbva {
 position: relative;
 width: 270px;
@@ -45,9 +76,10 @@ text-align: center;
 background-color: #ffffff;
 }
 
-a {
-color: #000000;
-font-size: 30px;
+#errores {
+color: #008000;
+font-size: 40px;
 text-align: center;
+background-color: #ffffff;
 }
 
