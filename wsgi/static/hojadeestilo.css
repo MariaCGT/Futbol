@@ -15,13 +15,17 @@ text-align: center;
 }
 
 #bbva {
-width: 250px;
-height: 120px;
+position: relative;
+width: 270px;
+height: 140px;
+bottom: 50px;
 }
 
 #adelante {
+position: relative;
 width: 220px;
 height: 100px;
+bottom: 70px;
 }
 
 #quiniela {
