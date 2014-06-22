@@ -9,9 +9,24 @@
 		 <div id="caja">
 			<h1> Fut_Results </h1>
 			<h2> El resultado de la jornada número {{ ronda }} es: </h2>
+				<table>
+					<tr>
+						<th> ID </th>
+						<th> Equipo local </th>
+						<th> Equipo visitante </th>
+						<th> Resultado </th>
+					</tr>
 				%for i in datos['match']:
-					<p> {{ i['visitor'] }}-{{ i['local'] }} {{ i['local_goals'] }}-{{ i['visitor_goals'] }} {{ i['id'] }}</p>
+					<tr> 
+						<td>{{ i['id'] }}</td>
+						<td>{{ i['local'] }}</td>
+						<td>{{ i['visitor'] }}</td>
+						<td>{{ i['local_goals'] }} - {{ i['visitor_goals'] }} </td>
+					</tr>
 				%end
+				</table>
+				<br/>
+				<br/>			
 			<h2> Para ver detalles de un partido concreto introduce su identificador</h2>
 			<form action="/detalle_partido" method="POST">
 				<b>Identificador:</b><input name="ident" type="text" />
@@ -20,8 +35,8 @@
 			<br/>
 			<br/>
 			<br/>
-			<a class="boton" href="/"> Inicio </a>
 			<a class="boton" href="javascript:history.go(-1)"> Atrás </a>
+			<a href="/"><img id="casa" src="/static/casita.jpeg"/></a>
 		</div>
 	</body>	
 </html>

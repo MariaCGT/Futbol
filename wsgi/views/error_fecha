@@ -11,8 +11,9 @@
 			<div id="errores">
 			<p> No hay partidos para la fecha {{ fecha }} </p>
 			</div>
-			<a class="boton" href="/"> Inicio </a>
+			<br/>
 			<a class="boton" href="javascript:history.go(-1)"> Consulta otra fecha </a>
+			<a href="/"><img id="casa" src="/static/casita.jpeg"/></a>
 		</div>
 	</body>
 </html>
