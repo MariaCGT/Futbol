@@ -2,9 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<title>Fut_Results</title>
+		<link rel="stylesheet" type="text/css" href="/static/hojadeestilo.css" >
+		<link href='http://fonts.googleapis.com/css?family=Raleway:700' rel='stylesheet' type='text/css'>
 	</head>
-	<body>
-		<h1> Fut_Results </h1>
+	 <body>
+		 <div id="caja">
+			<h1> Fut_Results </h1>
 			<h2> Fase de grupos </h2>
 			<h3> Elige un grupo para ver la clasificación </h3>
 			<form action="/grupos_mundial" method="POST">
@@ -26,5 +29,10 @@
 				<h3>Jornada:</h3>	<input name="ronda" type="text" />
 				<input value="Buscar" type="submit"/>
 			</form>
-		</body>
+			<br/>
+			<br/>
+			<br/>
+			<a class="boton" href="/"> Inicio </a>
+		</div>
+	</body>
 </html>

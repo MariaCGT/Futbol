@@ -8,13 +8,13 @@
 	<body>
 		<div id="caja">
 			<h1> Fut_Results </h1>
-			<img src="/static/ligabbva.jpg" width=270px height=140px;/>
+			<img id="bbva" src="/static/ligabbva.jpg" />
 			<br/>
 			<br/>
 			<br/>
 			<a class="boton" href="/bbva/clasificacion"> Clasificación </a>
 			<a class="boton" href="/bbva/pedir_jornada"> Jornadas </a>
-			<a class="boton" href="/bbva/pedir_fecha"> Partidos </a>
+			<a class="boton" href="/bbva/pedir_fecha"> Partidos por fecha </a>
 			<br/>
 			<br/>
 			<br/>

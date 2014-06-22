@@ -1,14 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<title>Fut_Results</title>
+		<link rel="stylesheet" type="text/css" href="/static/hojadeestilo.css" >
+		<link href='http://fonts.googleapis.com/css?family=Raleway:700' rel='stylesheet' type='text/css'>
 	</head>
 	 <body>
-		<h2>Resultados de la búsqueda</h2>
+		 <div id="caja">
+			<h1> Fut_Results </h1>
+			<h2> Clasificación </h2>
 			%contador=1
 			%for i in datos['table']:
 				<p> {{ contador }} {{ i['team'] }} {{ i['points'] }} {{ i['wins'] }} {{i['draws']}} {{ i['losses'] }} {{ i['gf'] }} {{ i['ga'] }} </p>
 				%contador=contador+1
 			%end
+			<br/>
+			<br/>
+			<br/>
+			<a class="boton" href="/"> Inicio </a>
+			<a class="boton" href="javascript:history.go(-1)"> Atrás </a>
+		</div>
 </body>
 </html>
 

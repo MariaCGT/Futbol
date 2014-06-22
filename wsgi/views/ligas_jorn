@@ -2,23 +2,31 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<title>Fut_Results</title>
+		<link rel="stylesheet" type="text/css" href="/static/hojadeestilo.css" >
+		<link href='http://fonts.googleapis.com/css?family=Raleway:700' rel='stylesheet' type='text/css'>
 	</head>
-	<body>
+	 <body>
+		 <div id="caja">
 			<h1> Fut_Results </h1>
-		<h2>Elige que quieres consultar</h2>
-		<form action="/ligas_europeas/pedir_jornada/resultado" method="POST">
-			<select name="identificador">
-				<option value="7"> Serie A italiana </option>
-				<option value="8"> Bundesliga alemana </option>
-				<option value="16"> Liga 1ª francesa </option>
-				<option value="19"> Liga 1ª portuguesa </option>
-				<option value="9"> Liga 1ª holandesa </option>
-			</select>
+			<h2>Elige que quieres consultar</h2>
 			<form action="/ligas_europeas/pedir_jornada/resultado" method="POST">
-			<p> Indica el número de jornada a consultar </p>
-			<input type="number" name="num_jornada" value="">
-			<input type="submit" value="Buscar"/>
+				<select name="identificador">
+					<option value="7"> Serie A italiana </option>
+					<option value="8"> Bundesliga alemana </option>
+					<option value="16"> Liga 1ª francesa </option>
+					<option value="19"> Liga 1ª portuguesa </option>
+					<option value="9"> Liga 1ª holandesa </option>
+				</select>
+				<form action="/ligas_europeas/pedir_jornada/resultado" method="POST">
+				<p> Indica el número de jornada a consultar </p>
+				<input type="number" name="num_jornada" value="">
+				<input type="submit" value="Buscar"/>
+				</form>
 			</form>
-		</form>
+			<br/>
+			<br/>
+			<br/>
+			<a class="boton" href="/"> Inicio </a>
+		</div>
 	</body>
 </html>

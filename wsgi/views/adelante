@@ -8,13 +8,13 @@
 	<body>
 		<div id="caja">
 			<h1> Fut_Results </h1>
-			<img src="/static/ligaadelante.png" width=220px height=100px;/>
+			<img id="adelante" src="/static/ligaadelante.png" />
 			<br/>
 			<br/>
 			<br/>
 			<a class="boton" href="/adelante/clasificacion"> Clasificación </a>
 			<a class="boton" href="/adelante/pedir_jornada"> Jornadas </a>
-			<a class="boton" href="/adelante/pedir_fecha"> Partidos </a>
+			<a class="boton" href="/adelante/pedir_fecha"> Partidos por fecha </a>
 			<br/>
 			<br/>
 			<br/>

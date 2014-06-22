@@ -1,3 +1,4 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<title>Fut_Results</title>
@@ -10,6 +11,9 @@
 		<div id="errores">
 			<p> No hay detalles para este partido </p>
 		</div>
+		<br/>
+		<br/>
+		<br/>
 		<a class="boton" href="/"> Inicio </a>
 		<a class="boton" href="javascript:history.go(-1)"> Consulta otro partido </a>
 		<a class="boton" href="/adelante/pedir_jornada"> Consulta otra jornada </a>

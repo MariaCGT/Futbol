@@ -2,12 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<title>Fut_Results</title>
+		<link rel="stylesheet" type="text/css" href="/static/hojadeestilo.css" >
+		<link href='http://fonts.googleapis.com/css?family=Raleway:700' rel='stylesheet' type='text/css'>
 	</head>
-	<body>
+	 <body>
+		 <div id="caja">
 			<h1> Fut_Results </h1>
-		<h2>Elige que quieres consultar</h2>
-			<a href="/ligas_europeas/clasificacion"> Clasificación </a>
-			</br>
-			<a href="/ligas_europeas/pedir_jornada"> Jornadas </a>
+			<img id="adelante" src="/static/ligaseuropeas.jpeg" />
+			<br/>
+			<br/>
+			<br/>
+			<a class="boton" href="/ligas_europeas/clasificacion"> Clasificación </a>
+			<a class="boton" href="/ligas_europeas/pedir_jornada"> Jornadas </a>
+			<br/>
+			<br/>
+			<br/>
+			<a class="boton" href="/"> Inicio </a>
+		</div>
 	</body>
 </html>
+		

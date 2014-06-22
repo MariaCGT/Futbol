@@ -1,20 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<title>Fut_Results</title>
+		<link rel="stylesheet" type="text/css" href="/static/hojadeestilo.css" >
+		<link href='http://fonts.googleapis.com/css?family=Raleway:700' rel='stylesheet' type='text/css'>
 	</head>
 	 <body>
-		<h2>Los partidos del {{ fecha }}</h2>
-			%for partido in partidos:
-				<p>
-				%for elemento in partido:
-				{{ elemento }}
+		 <div id="caja">
+			<h1> Fut_Results </h1>
+			<h2>Los partidos del {{ fecha }}</h2>
+				%for partido in partidos:
+					<p>
+					%for elemento in partido:
+					{{ elemento }}
+					%end
+					</p>
 				%end
-				</p>
-			%end
-		<h3> Para ver detalles de un partido concreto introduce su identificador</h3>
-		<form action="/detalle_partido" method="POST">
-			<b>Identificador:</b><input name="ident" type="text" />
-			<input value="Buscar" type="submit"/>
-		</form>
-</body>
+			<h3> Para ver detalles de un partido concreto introduce su identificador</h3>
+			<form action="/detalle_partido" method="POST">
+				<b>Identificador:</b><input name="ident" type="text" />
+				<input value="Buscar" type="submit"/>
+			</form>
+			<br/>
+			<br/>
+			<br/>
+			<a class="boton" href="/"> Inicio </a>
+			<a class="boton" href="javascript:history.go(-1)"> Atrás </a>
+		</div>
+	</body>
 </html>
