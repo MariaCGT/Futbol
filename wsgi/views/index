@@ -1,20 +1,21 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<title>Fut_Results</title>
+		<title> Fut_Results </title>
+		<link rel="stylesheet" type="text/css" href="/static/hojadeestilo.css" >
+		<link href='http://fonts.googleapis.com/css?family=Raleway:700' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
+		<div id="caja">
 			<h1> Fut_Results </h1>
-		<h2>Elige que quieres consultar</h2>
-			<a href="/bbva"> Liga BBVA </a>
-			</br>
-			<a href="/adelante"> Liga Adelante </a>
-			</br>
-			<a href="/quiniela"> Quiniela </a>
-			</br>
-			<a href="/mundial"> Mundial </a>
-			</br>	
-			<a href="/ligas_europeas"> Ligas europeas </a>
-			</br>		
+				<div id="menu">
+					<a href="/bbva"><img id="bbva" src="/static/ligabbva.jpg"/></a>
+					<a href="/adelante"><img id="adelante" src="/static/ligaadelante.png"/></a>
+					</br>
+					<a href="/quiniela"><img id="quiniela" src="/static/quiniela.jpg"/></a>
+					<a href="/mundial"><img id="mundial" src="/static/mundial.jpg"/></a>
+					<a href="/ligas_europeas"><img id="quiniela" src="/static/ligaseuropeas.jpeg"/></a>
+				</div>
+		</div>	
 	</body>
 </html>

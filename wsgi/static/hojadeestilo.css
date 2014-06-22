@@ -1,0 +1,49 @@
+body {
+font-family: verdana,arial,sans-serif;
+background-image:url('/static/borde.jpg');
+}
+
+#caja {
+margin-top: 50px;
+margin-bottom: 50px;
+margin-left: 50px;
+margin-right: 50px;
+padding-top: 20px;
+padding-bottom: 80px;
+background-color: #ffffff;
+text-align: center;
+}
+
+#bbva {
+width: 250px;
+height: 120px;
+}
+
+#adelante {
+width: 220px;
+height: 100px;
+}
+
+#quiniela {
+width: 220px;
+height: 100px;
+}
+
+#mundial {
+width: 240px;
+height: 100px;
+}
+
+h1 {
+color: #008000;
+font-size: 70px;
+text-align: center;
+background-color: #ffffff;
+}
+
+a {
+color: #000000;
+font-size: 30px;
+text-align: center;
+}
+

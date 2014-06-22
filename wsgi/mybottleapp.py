@@ -3,8 +3,12 @@
 import requests
 import json
 import os
-from bottle import request, get, post, run, debug, route, template, error, TEMPLATE_PATH, default_app
+from bottle import request, get, post, run, debug, route, template, error, TEMPLATE_PATH, default_app, static_file
 import bottle
+
+@route('/static/<filename>')
+def server_static(filename):
+    return static_file(filename, root='./static')
 
 @route('/')
 def buscar():
