@@ -9,7 +9,7 @@
 		<div id="caja">
 			<h1> Fut_Results </h1>
 			<div id="errores">
-			<p> No hay resultados para esta búsqueda </p>
+				<p> No hay resultados para esta búsqueda </p>
 			</div>
 			<br/>
 			<br/>

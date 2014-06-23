@@ -9,7 +9,7 @@
 		<div id="caja">
 			<h1> Fut_Results </h1>
 			<div id="errores">
-			<p> No hay detalles para este partido </p>
+				<p> No hay detalles para este partido </p>
 			</div>
 			<br/>
 			<br/>
