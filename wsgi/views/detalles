@@ -49,10 +49,13 @@
 			<br/>
 			<br/>
 			<br/>
-			<a class="boton" href="/"> Inicio </a>
 			<a class="boton" href="javascript:history.go(-1)"> Atrás </a>
+			<br/>
+			<br/>
+			<br/>
+			<a href="/"><img id="casa" src="/static/casita.jpeg"/></a>
 		</div>
-</body>
+	</body>
 </html>
 
 

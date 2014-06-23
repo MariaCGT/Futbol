@@ -251,6 +251,10 @@ def error404(error):
 @error(500)
 def error500(error):
 	return template('errores')
+	
+@error(405)
+def error405(error):
+	return template('errores')
 		
 		
 		

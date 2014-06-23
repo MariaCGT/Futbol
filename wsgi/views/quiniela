@@ -10,13 +10,13 @@
 			<h1> Fut_Results </h1>
 			<h2> Introduce el número de jornada a consultar </h2>
 			<form action="/quiniela_jornada" method="POST">
-			<b>Jornada:</b>	<input name="jornada" type="text" />
-			<input value="Buscar" type="submit"/>
-			<br/>
-			<br/>
-			<br/>
-			<a class="boton" href="/"> Inicio </a>
+				<b>Jornada:</b>	<input name="jornada" type="text" />
+				<input value="Buscar" type="submit"/>
 			</form>
+			<br/>
+			<br/>
+			<br/>
+			<a href="/"><img id="casa" src="/static/casita.jpeg"/></a>
 		</div>
 	</body>
 </html>

@@ -5,8 +5,8 @@
 		<link rel="stylesheet" type="text/css" href="/static/hojadeestilo.css" >
 		<link href='http://fonts.googleapis.com/css?family=Raleway:700' rel='stylesheet' type='text/css'>
 	</head>
-	 <body>
-		 <div id="caja">
+	<body>
+		<div id="caja">
 			<h1> Fut_Results </h1>
 			<h2>Elige que quieres consultar</h2>
 			<form action="/ligas_europeas/pedir_jornada/resultado" method="POST">
@@ -18,15 +18,16 @@
 					<option value="9"> Liga 1ª holandesa </option>
 				</select>
 				<form action="/ligas_europeas/pedir_jornada/resultado" method="POST">
-				<p> Indica el número de jornada a consultar </p>
-				<input type="number" name="num_jornada" value="">
-				<input type="submit" value="Buscar"/>
+					<p> Indica el número de jornada a consultar </p>
+					<input type="number" name="num_jornada" value="">
+					<input type="submit" value="Buscar"/>
 				</form>
 			</form>
 			<br/>
 			<br/>
 			<br/>
-			<a class="boton" href="/"> Inicio </a>
+			<a href="/"><img id="casa" src="/static/casita.jpeg"/></a>
 		</div>
 	</body>
 </html>
+

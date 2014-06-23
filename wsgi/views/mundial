@@ -32,7 +32,8 @@
 			<br/>
 			<br/>
 			<br/>
-			<a class="boton" href="/"> Inicio </a>
+			<a href="/"><img id="casa" src="/static/casita.jpeg"/></a>
 		</div>
 	</body>
 </html>
+

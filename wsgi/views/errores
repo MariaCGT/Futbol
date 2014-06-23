@@ -11,8 +11,14 @@
 			<div id="errores">
 			<p> No hay resultados para esta búsqueda </p>
 			</div>
-			<a class="boton" href="/"> Inicio </a>
+			<br/>
+			<br/>
+			<br/>
 			<a class="boton" href="javascript:history.go(-1)"> Atrás </a>
+			<br/>
+			<br/>
+			<br/>
+			<a href="/"><img id="casa" src="/static/casita.jpeg"/></a>
 		</div>
 	</body>
 </html>

@@ -9,10 +9,15 @@
 		<div id="caja">
 			<h1> Fut_Results </h1>
 			<div id="errores">
-			<p> No hay partidos para la fecha {{ fecha }} </p>
+				<p> No hay partidos para la fecha {{ fecha }} </p>
 			</div>
 			<br/>
+			<br/>
+			<br/>
 			<a class="boton" href="javascript:history.go(-1)"> Consulta otra fecha </a>
+			<br/>
+			<br/>
+			<br/>
 			<a href="/"><img id="casa" src="/static/casita.jpeg"/></a>
 		</div>
 	</body>

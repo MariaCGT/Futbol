@@ -12,8 +12,8 @@
 				<table>
 					<tr>
 						<th> ID </th>
-						<th> Equipo local </th>
-						<th> Equipo visitante </th>
+						<th> Local </th>
+						<th> Visitante </th>
 						<th> Resultado </th>
 					</tr>
 				%for i in datos['match']:
@@ -27,15 +27,18 @@
 				</table>
 				<br/>
 				<br/>			
-			<h2> Para ver detalles de un partido concreto introduce su identificador</h2>
+			<h2> Para ver detalles de un partido concreto introduce su ID </h2>
 			<form action="/detalle_partido" method="POST">
-				<b>Identificador:</b><input name="ident" type="text" />
+				<b>ID:</b><input name="ident" type="text" />
 				<input value="Buscar" type="submit"/>
 			</form>
 			<br/>
 			<br/>
 			<br/>
 			<a class="boton" href="javascript:history.go(-1)"> Atrás </a>
+			<br/>
+			<br/>
+			<br/>
 			<a href="/"><img id="casa" src="/static/casita.jpeg"/></a>
 		</div>
 	</body>	
