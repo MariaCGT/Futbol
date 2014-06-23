@@ -10,7 +10,8 @@
 			<h1> Fut_Results </h1>
 			<h2> Introduce el número de jornada a consultar </h2>
 			<form action="/jornada" method="POST">
-				<b>Jornada:</b>	<input name="ronda" type="text" />
+				<b>Jornada:</b>
+				<input id="input1" name="ronda" type="text" />
 				<input value="Buscar" type="submit"/>
 				<input type="hidden" name="liga" value="2"/>
 			</form>

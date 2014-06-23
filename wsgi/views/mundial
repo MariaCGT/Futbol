@@ -26,7 +26,8 @@
 				</form>
 			</form>		
 			<form action="/jornada_mundial" method="POST">
-				<h3>Jornada:</h3>	<input name="ronda" type="text" />
+				<h3>Jornada:</h3>
+				<input id="input1" name="ronda" type="text" />
 				<input value="Buscar" type="submit"/>
 			</form>
 			<br/>

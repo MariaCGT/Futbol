@@ -18,7 +18,8 @@
 				%end
 			<h3> Para ver detalles de un partido concreto introduce su ID </h3>
 			<form action="/detalle_partido" method="POST">
-				<b>ID:</b><input name="ident" type="text" />
+				<b>ID:</b>
+				<input id="input1" name="ident" type="text" />
 				<input value="Buscar" type="submit"/>
 			</form>
 			<br/>

@@ -10,7 +10,8 @@
 			<h1> Fut_Results </h1>
 			<h2> Introduce el número de jornada a consultar </h2>
 			<form action="/quiniela_jornada" method="POST">
-				<b>Jornada:</b>	<input name="jornada" type="text" />
+				<b>Jornada:</b>
+				<input id="input1" name="jornada" type="text" />
 				<input value="Buscar" type="submit"/>
 			</form>
 			<br/>

@@ -19,7 +19,7 @@
 				</select>
 				<form action="/ligas_europeas/pedir_jornada/resultado" method="POST">
 					<p> Indica el número de jornada a consultar </p>
-					<input type="number" name="num_jornada" value="">
+					<input id="input1" type="number" name="num_jornada" value="">
 					<input type="submit" value="Buscar"/>
 				</form>
 			</form>

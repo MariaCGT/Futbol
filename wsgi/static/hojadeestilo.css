@@ -88,3 +88,9 @@ text-align: center;
 background-color: #ffffff;
 }
 
+#input1 {
+padding: 5px;
+border: solid 1px #008000;
+border-radius: 5px;
+}
+
