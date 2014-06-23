@@ -9,12 +9,12 @@
 		 <div id="caja">
 			<h1> Fut_Results </h1>
 			<h2> Detalles del partido </h2>
-			<p>Fecha y hora: {{ datos['schedule'] }}</p>
-			<p>Liga: {{ datos['league'] }}</p>
-			<p>Resultado: {{ datos['result'] }}</p>
-			<p>Equipo Local: {{ datos['local'] }} </p><img id="img_det" src="{{ datos['local_shield'] }}"</>
-			<p>Equipo Visitante: {{ datos['visitor'] }} </p><img id="img_det" src="{{ datos['visitor_shield'] }}"</>
-			<p>Alineación local: </p>
+			<p> Fecha y hora: {{ datos['schedule'] }} </p>
+			<p> Liga: {{ datos['league'] }} </p>
+			<p> Resultado: {{ datos['result'] }} </p>
+			<p> Equipo Local: {{ datos['local'] }} </p><img id="img_det" src="{{ datos['local_shield'] }}"</>
+			<p> Equipo Visitante: {{ datos['visitor'] }} </p><img id="img_det" src="{{ datos['visitor_shield'] }}"</>
+			<p> Alineación local: </p>
 			%for i in datos['lineups']['local']:
 				<p> {{ i['last_name'] }}</p>
 				<img id="img_det" src="{{ i['image'] }}"</>
@@ -40,22 +40,48 @@
 				</tr>
 				%end
 			</table>
+			<br/>
+			<br/>
+			<br/>
 			<p>Tarjetas:</p>
-			%for tarjeta in tarjetas:
-				<p>
-				%for elemento in tarjeta:
-				{{ elemento }}
+			<table>
+					<tr>
+						<th> Minuto </th>
+						<th> Tarjeta </th>
+						<th> Jugador </th>
+						<th> Equipo </th>
+					</tr>
+				%for tarjeta in tarjetas:
+				<tr>
+					%for elemento in tarjeta:
+					<td>
+						<p>{{ elemento }}</p>
+					</td>
+					%end
+				</tr>
 				%end
-				</p>
-			%end
+			</table>
+			<br/>
+			<br/>
+			<br/>
 			<p>Cambios:</p>
-			%for cambio in cambios:
-				<p>
-				%for elemento in cambio:
-				{{ elemento }}
+			<table>
+					<tr>
+						<th> Minuto </th>
+						<th> Acción </th>
+						<th> Jugador </th>
+						<th> Equipo </th>
+					</tr>
+				%for cambio in cambios:
+				<tr>
+					%for elemento in cambio:
+					<td>
+						<p>{{ elemento }}</p>
+					</td>
+					%end
+				</tr>
 				%end
-				</p>
-			%end
+			</table>
 			<br/>
 			<br/>
 			<br/>

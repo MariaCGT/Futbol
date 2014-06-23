@@ -11,28 +11,28 @@
 			<h2> El resultado de la jornada número {{ ronda }} es: </h2>
 				<table>
 					<tr>
-						<th> ID </th>
 						<th> Local </th>
 						<th> Visitante </th>
 						<th> Resultado </th>
+						<th> Detalles </th>
 					</tr>
 				%for i in datos['match']:
-					<tr> 
-						<td>{{ i['id'] }}</td>
+					<tr>
 						<td>{{ i['local'] }}</td>
 						<td>{{ i['visitor'] }}</td>
 						<td>{{ i['local_goals'] }} - {{ i['visitor_goals'] }} </td>
+						<form action="/detalle_partido" method="POST">
+						<td>
+							<input type="submit" value="Detalles">
+							<input type="hidden" name="ident" value="{{ i['id'] }}">
+						</td>
+						</form>
 					</tr>
 				%end
 				</table>
 				<br/>
 				<br/>		
 				<br/>	
-			<h2> Para ver detalles de un partido concreto introduce su ID </h2>
-			<form action="/detalle_partido" method="POST">
-				<b>ID:</b>
-				<input id="input1" name="ident" type="text" />
-				<input value="Buscar" type="submit"/>
 			</form>
 			<br/>
 			<br/>
