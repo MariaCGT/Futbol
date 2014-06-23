@@ -8,7 +8,7 @@
 	 <body>
 		 <div id="caja">
 			<h1> Fut_Results </h1>
-			<h2>Detalles</h2>
+			<h2> Detalles del partido </h2>
 			<p>Fecha y hora: {{ datos['schedule'] }}</p>
 			<p>Liga: {{ datos['league'] }}</p>
 			<p>Resultado: {{ datos['result'] }}</p>
@@ -16,20 +16,30 @@
 			<p>Equipo Visitante: {{ datos['visitor'] }} </p><img id="img_det" src="{{ datos['visitor_shield'] }}"</>
 			<p>Alineación local: </p>
 			%for i in datos['lineups']['local']:
-				<p> {{ i['last_name'] }}</p><img id="img_det" src="{{ i['image'] }}"</>
+				<p> {{ i['last_name'] }}</p>
+				<img id="img_det" src="{{ i['image'] }}"</>
 			%end
 			<p>Alineación visitante: </p>
 			%for i in datos['lineups']['visitor']:
 				<p> {{ i['last_name'] }}</p><img id="img_det" src="{{ i['image'] }}"</>
 			%end
 			<p>Goles:</p>
-			%for gol in goles:
-				<p>
-				%for elemento in gol:
-				{{ elemento }}
+			<table>
+					<tr>
+						<th> Minuto </th>
+						<th> Jugador </th>
+						<th> Equipo </th>
+					</tr>
+				%for gol in goles:
+				<tr>
+					%for elemento in gol:
+					<td>
+						<p>{{ elemento }}</p>
+					</td>
+					%end
+				</tr>
 				%end
-				</p>
-			%end
+			</table>
 			<p>Tarjetas:</p>
 			%for tarjeta in tarjetas:
 				<p>

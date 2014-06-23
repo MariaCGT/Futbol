@@ -9,11 +9,31 @@
 		 <div id="caja">
 			<h1> Fut_Results </h1>
 			<h2> Clasificación </h2>
-			%contador=1
-			%for i in datos['table']:
-				<p> {{ contador }} {{ i['team'] }} {{ i['points'] }} {{ i['wins'] }} {{i['draws']}} {{ i['losses'] }} {{ i['gf'] }} {{ i['ga'] }} </p>
-				%contador=contador+1
-			%end
+				<table>
+					<tr>
+						<th> Posición </th>
+						<th> Equipo </th>
+						<th> Puntos </th>
+						<th> P. Ganados </th>
+						<th> P. Empatados </th>
+						<th> P. Perdidos </th>
+						<th> G. Favor </th>
+						<th> G. Contra </th>
+					</tr>
+					%contador=1
+					%for i in datos['table']:
+					<tr> 
+							<td>{{ contador }}</td>
+							<td>{{ i['team'] }}</td>
+							<td>{{ i['points'] }}</td>
+							<td>{{ i['wins'] }}</td>
+							<td>{{ i['draws'] }}</td>
+							<td>{{ i['losses'] }}</td>
+							<td>{{ i['gf'] }}</td>
+							<td>{{ i['ga'] }}</td>
+					</tr>
+					%end
+				</table>
 			<br/>
 			<br/>
 			<br/>

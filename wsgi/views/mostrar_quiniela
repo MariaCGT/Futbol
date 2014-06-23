@@ -9,9 +9,20 @@
 		 <div id="caja">
 			<h1> Fut_Results </h1>
 			<h2>Quiniela de la Jornada {{ ronda }}</h2>
-			%for i in datos['quiniela']['lines']:
-				<p>{{ i['team1_name'] }}-{{ i['team2_name'] }} {{ i['result'] }}</p>
-			%end
+			<table>
+					<tr>
+						<th> Local </th>
+						<th> Visitante </th>
+						<th> Resultado </th>
+					</tr>
+					%contador=1
+					%for i in datos['quiniela']['lines']:
+					<tr> 
+							<td>{{ i['team1_name'] }}</td>
+							<td>{{ i['team2_name'] }}</td>
+							<td>{{ i['result'] }}</td>
+					%end
+				</table>
 			<br/>
 			<br/>
 			<br/>

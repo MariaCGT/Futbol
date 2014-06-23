@@ -8,7 +8,7 @@
 	 <body>
 		 <div id="caja">
 			<h1> Fut_Results </h1>
-			<h2>Elige que quieres consultar</h2>
+			<h2> Selecciona la liga a consultar</h2>
 			<form action="/ligas_europeas/pedir_fecha/resultado" method="POST">
 				<select name="identificador">
 					<option value="7"> Serie A italiana </option>
@@ -18,7 +18,7 @@
 					<option value="9"> Liga 1ª holandesa </option>
 				</select>
 				<form action="/ligas_europeas/pedir_fecha/resultado" method="POST">
-					<p> Indica la fecha a consultar </p>
+					<h2> Indica la fecha a consultar </h2>
 					<input id="input1" type="text" name="fecha_jornada" placeholder="YYYY-MM-DD" value="">
 					<input type="submit" value="Buscar"/>
 				</form>

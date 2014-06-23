@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<title>Fut_Results</title>
+		<title> Fut_Results </title>
 		<link rel="stylesheet" type="text/css" href="/static/hojadeestilo.css" >
 		<link href='http://fonts.googleapis.com/css?family=Raleway:700' rel='stylesheet' type='text/css'>
 	</head>
@@ -9,13 +9,26 @@
 		 <div id="caja">
 			<h1> Fut_Results </h1>
 			<h2>Los partidos del {{ fecha }}</h2>
+			<table>
+					<tr>
+						<th> ID </th>
+						<th> Local </th>
+						<th> Visitante </th>
+						<th> Resultado </th>
+					</tr>
 				%for partido in partidos:
-					<p>
+				<tr>
 					%for elemento in partido:
-					{{ elemento }}
+					<td>					
+						<p>{{ elemento }}</p>
+					</td>
 					%end
-					</p>
+				</tr>
 				%end
+			</table>
+			<br/>
+			<br/>
+			<br/>
 			<h2> Para ver detalles de un partido concreto introduce su ID </h2>
 			<form action="/detalle_partido" method="POST">
 				<b>ID:</b>
