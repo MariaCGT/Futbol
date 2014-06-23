@@ -8,9 +8,9 @@
 	<body>
 		 <div id="caja">
 			<h1> Fut_Results </h1>
-			<h2> Introduce la fecha a consultar (yyyy-mm-dd) </h2>
+			<h2> Introduce la fecha a consultar </h2>
 			<form action="/bbva/partidos" method="POST">
-			<b>Fecha:</b><input name="fecha" type="text" />
+			<b>Fecha:</b><input name="fecha" placeholder="YYYY-MM-DD" type="text" />
 			<input value="Buscar" type="submit"/>
 			</form>
 			<br/>

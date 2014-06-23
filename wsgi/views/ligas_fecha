@@ -18,8 +18,8 @@
 					<option value="9"> Liga 1ª holandesa </option>
 				</select>
 				<form action="/ligas_europeas/pedir_fecha/resultado" method="POST">
-					<p> Indica la fecha a consultar (yyyy-mm-dd) </p>
-					<input type="text" name="fecha_jornada" value="">
+					<p> Indica la fecha a consultar </p>
+					<input type="text" name="fecha_jornada" placeholder="YYYY-MM-DD" value="">
 					<input type="submit" value="Buscar"/>
 				</form>
 			</form>

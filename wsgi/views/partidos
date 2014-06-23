@@ -16,9 +16,9 @@
 					%end
 					</p>
 				%end
-			<h3> Para ver detalles de un partido concreto introduce su identificador</h3>
+			<h3> Para ver detalles de un partido concreto introduce su ID </h3>
 			<form action="/detalle_partido" method="POST">
-				<b>Identificador:</b><input name="ident" type="text" />
+				<b>ID:</b><input name="ident" type="text" />
 				<input value="Buscar" type="submit"/>
 			</form>
 			<br/>
