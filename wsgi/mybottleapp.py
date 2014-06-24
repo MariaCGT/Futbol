@@ -191,6 +191,14 @@ def quin_jornada():
 def segunda():
 	return template('mundial')
 	
+@get('/mundial/clasificacion')
+def clas_mundial():
+	return template('mundial_clas')
+
+@get('/mundial/pedir_jornada')
+def clas_mundial():
+	return template('mundial_jorn')
+	
 @post('/grupos_mundial')
 def grupos_mundial():
 	grupo = request.forms.get("grupo")

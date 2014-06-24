@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Fut_Results</title>
+		<link rel="stylesheet" type="text/css" href="/static/hojadeestilo.css" >
+		<link href='http://fonts.googleapis.com/css?family=Raleway:700' rel='stylesheet' type='text/css'>
+	</head>
+	 <body>
+		 <div id="caja">
+			<h1> Fut_Results </h1>
+			<h2> Fase de grupos </h2>
+			<h3> Elige un grupo para ver la clasificación </h3>
+			<form action="/grupos_mundial" method="POST">
+				<select name="grupo">
+					<option value="1"> Grupo 1 </option>
+					<option value="2"> Grupo 2 </option>
+					<option value="3"> Grupo 3 </option>
+					<option value="4"> Grupo 4 </option>
+					<option value="5"> Grupo 5 </option>
+					<option value="6"> Grupo 6 </option>
+					<option value="7"> Grupo 7 </option>
+					<option value="8"> Grupo 8 </option>
+				</select>
+				<form action="/grupos_mundial" method="POST">
+					<input value="Buscar" type="submit"/>
+				</form>
+			</form>		
+			<br/>
+			<br/>
+			<br/>
+			<a class="boton" href="javascript:history.go(-1)"> Atrás </a>
+			<br/>
+			<br/>
+			<br/>
+			<a href="/"><img id="casa" src="/static/casita.jpeg"/></a>
+		</div>
+	</body>
+</html>
+

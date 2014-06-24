@@ -8,12 +8,16 @@
 	 <body>
 		 <div id="caja">
 			<h1> Fut_Results </h1>
-			<img id="mundial" src="/static/mundial.jpg"/>
+			<h2> Elige una jornada </h2>	
+			<form action="/jornada_mundial" method="POST">
+				<h3>Jornada:</h3>
+				<input id="input1" name="ronda" type="text" />
+				<input value="Buscar" type="submit"/>
+			</form>
 			<br/>
 			<br/>
 			<br/>
-			<a class="boton" href="/mundial/clasificacion"> Clasificación </a>
-			<a class="boton" href="/mundial/pedir_jornada"> Jornadas </a>
+			<a class="boton" href="javascript:history.go(-1)"> Atrás </a>
 			<br/>
 			<br/>
 			<br/>
@@ -21,4 +25,3 @@
 		</div>
 	</body>
 </html>
-		
