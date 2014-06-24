@@ -9,7 +9,7 @@
 		 <div id="caja">
 			<h1> Fut_Results </h1>
 			<h2>Quiniela de la Jornada {{ ronda }}</h2>
-			<table>
+			<table class="tabla_jorn">
 					<tr>
 						<th> Local </th>
 						<th> Visitante </th>

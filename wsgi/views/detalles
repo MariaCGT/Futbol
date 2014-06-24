@@ -10,21 +10,58 @@
 			<h1> Fut_Results </h1>
 			<h2> Detalles del partido </h2>
 			<p> Fecha y hora: {{ datos['schedule'] }} </p>
-			<p> Liga: {{ datos['league'] }} </p>
-			<p> Resultado: {{ datos['result'] }} </p>
-			<p> Equipo Local: {{ datos['local'] }} </p><img id="img_det" src="{{ datos['local_shield'] }}"</>
-			<p> Equipo Visitante: {{ datos['visitor'] }} </p><img id="img_det" src="{{ datos['visitor_shield'] }}"</>
-			<p> Alineación local: </p>
-			%for i in datos['lineups']['local']:
-				<p> {{ i['last_name'] }}</p>
-				<img id="img_det" src="{{ i['image'] }}"</>
-			%end
-			<p>Alineación visitante: </p>
-			%for i in datos['lineups']['visitor']:
-				<p> {{ i['last_name'] }}</p><img id="img_det" src="{{ i['image'] }}"</>
-			%end
+			<p> {{ datos['league'] }} </p>
+			<table class="tabla_detalle">
+				<tr>
+					<td>
+						{{ datos['local'] }}
+					</td>
+					<td colspan="2" rowspan="2">
+						<h2>{{ datos['result'] }}</h2>
+					</td>
+					<td>
+						{{ datos['visitor'] }}
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<img id="img_det" src="{{ datos['local_shield'] }}"</>
+					</td>
+					<td>
+						<img id="img_det" src="{{ datos['visitor_shield'] }}"</>
+					</td>
+				</tr>
+			</table>
+			<br/>
+			<br/>
+			<table class="tabla_detalle">
+				%for i in xrange(len(datos['lineups']['local'])):
+					<tr>
+						<td>
+						<div class="cajas">
+							<img id="img_det" src="{{ datos['lineups']['local'][i]['image'] }}"/>
+						</div>
+						</td>
+						<td>
+							<p>{{ datos['lineups']['local'][i]['last_name'] }}</p>
+						</td>
+						<td width="150">
+						</td>
+						<td>
+						<div class="cajas">
+							<img id="img_det" src="{{ datos['lineups']['visitor'][i]['image'] }}"/>
+						</div>
+						</td>
+						<td>
+							<p>{{ datos['lineups']['visitor'][i]['last_name'] }}</p>
+						</td>
+					</tr>					
+				%end
+			</table>	
+			<br/>
+			<br/>
 			<p>Goles:</p>
-			<table>
+			<table class="tabla_jorn">
 					<tr>
 						<th> Minuto </th>
 						<th> Jugador </th>
@@ -44,7 +81,7 @@
 			<br/>
 			<br/>
 			<p>Tarjetas:</p>
-			<table>
+			<table class="tabla_jorn">
 					<tr>
 						<th> Minuto </th>
 						<th> Tarjeta </th>
@@ -65,7 +102,7 @@
 			<br/>
 			<br/>
 			<p>Cambios:</p>
-			<table>
+			<table class="tabla_jorn">
 					<tr>
 						<th> Minuto </th>
 						<th> Acción </th>

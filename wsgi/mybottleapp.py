@@ -83,10 +83,10 @@ def partidos1():
 			comp = datos['matches'][i]['competition_name'].encode("UTF-8")
 			if comp == "Liga BBVA":
 				partidos.append([])
-				partidos[j].append(datos['matches'][i]['id'])
 				partidos[j].append(datos['matches'][i]['local'])
 				partidos[j].append(datos['matches'][i]['visitor'])
 				partidos[j].append(datos['matches'][i]['result'])
+				partidos[j].append(datos['matches'][i]['id'])
 				j = j + 1
 		if partidos == []:
 			return template('error_fecha',fecha=fecha)

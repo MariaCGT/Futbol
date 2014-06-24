@@ -81,8 +81,8 @@ margin-right: 10px;
 }
 
 #img_det {
-width: 50px;
-height: 50px;
+width: 40px;
+height: 40px;
 }
 
 #errores {
@@ -97,6 +97,54 @@ padding: 5px;
 border: solid 1px #008000;
 border-radius: 5px;
 }
+
+.cajas {
+float:left;
+width:50px;
+height:50px;
+margin:10px;
+padding:5px;
+border-right: #a5a7aa solid 2px;
+border-bottom: #a5a7aa solid 2px;
+text-align:center;
+}
+
+.tabla_clas, .tabla_jorn {
+border-collapse: collapse;
+margin:auto;
+border: 1px solid #000;
+caption-side:bottom;
+text-align: center;
+}
+
+.tabla_clas {
+width: 70%;
+}
+
+.tabla_jorn {
+width: 40%;
+}
+
+.tabla_clas th, .tabla_jorn th {
+border: 1px solid #000;
+background: #008000;
+color: #ffffff;
+}
+
+.tabla_clas td, .tabla_jorn td {
+border: 1px solid #000;
+}
+
+.tabla_clas tr:hover, .tabla_jorn tr:hover {
+background: #F0F8FF;
+}
+
+.tabla_detalle {
+width: 50%;
+margin:auto;
+text-align: center;
+}
+
 
 
 

@@ -9,7 +9,9 @@
 		 <div id="caja">
 			<h1> Fut_Results </h1>
 			<h2> Clasificación </h2>
-				<table>
+			<br/>
+			<br/>
+				<table class="tabla_clas">
 					<tr>
 						<th> Posición </th>
 						<th> Equipo </th>
@@ -31,6 +33,7 @@
 							<td>{{ i['losses'] }}</td>
 							<td>{{ i['gf'] }}</td>
 							<td>{{ i['ga'] }}</td>
+							%contador = contador + 1
 					</tr>
 					%end
 				</table>
