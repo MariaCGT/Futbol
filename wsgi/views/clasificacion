@@ -44,7 +44,7 @@
 			<br/>
 			<br/>
 			<br/>
-			<a href="/"><img id="casa" src="/static/casita.jpeg"/></a>
+			<a class="flotante" href="/"><img id="casa" src="/static/casita.jpeg"/></a>
 		</div>
 	</body>
 </html>

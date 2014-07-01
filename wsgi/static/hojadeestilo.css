@@ -21,6 +21,12 @@ background-color: #ffffff;
 text-align: center;
 }
 
+#enlace {
+color: skyblue;
+text-decoration: none;
+font-weight: bold;
+}
+
 #boton a {
 margin: 1em 0;
 float: center;
@@ -78,6 +84,13 @@ width: 40px;
 height: 40px;
 float: right;
 margin-right: 10px;
+}
+
+.flotante {
+display: scroll;
+position: fixed;
+bottom: 510px;
+right: 65px;
 }
 
 #img_det {

@@ -15,6 +15,11 @@
 					<a href="/quiniela"><img id="quiniela" src="/static/quiniela.jpg"/></a>
 					<a href="/mundial"><img id="mundial" src="/static/mundial.jpg"/></a>
 					<a href="/ligas_europeas"><img id="quiniela" src="/static/ligaseuropeas.jpeg"/></a>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<a id="enlace" href="http://www.resultados-futbol.com">Powered by resultados-Futbol.com</a>
 				</div>
 		</div>	
 	</body>
